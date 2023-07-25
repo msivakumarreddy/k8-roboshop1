@@ -20,3 +20,19 @@ spec:
     requests:
       storage: 10Gi   # Specify the desired storage size
   storageClassName: ebs-sc
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: my-container
+      image: nginx
+      volumeMounts:
+        - name: my-pvc
+          mountPath: /usr/share/nginx/html
+  volumes:
+    - name: my-pvc
+      persistentVolumeClaim:
+        claimName: ebs-dynamic
