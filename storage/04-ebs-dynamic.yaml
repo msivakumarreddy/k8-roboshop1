@@ -1,0 +1,22 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ebs-sc
+provisioner: ebs.csi.aws.com
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
+parameters:
+  type: gp2
+  zones: ap-south-1a
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-dynamic
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi   # Specify the desired storage size
+  storageClassName: ebs-sc
