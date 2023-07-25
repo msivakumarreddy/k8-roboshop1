@@ -15,4 +15,15 @@ spec:
   nfs:
     server: fs-0609178593448abc6.efs.ap-south-1.amazonaws.com
     path: /static
-    
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: ""
