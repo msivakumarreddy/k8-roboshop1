@@ -14,7 +14,7 @@ spec:
     - nfsvers=4.1
   nfs:
     server: fs-0609178593448abc6.efs.ap-south-1.amazonaws.com
-    path: /
+    path: /nginx
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
