@@ -7,7 +7,6 @@ reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
 parameters:
   type: gp2
-  zones: ap-south-1a
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
