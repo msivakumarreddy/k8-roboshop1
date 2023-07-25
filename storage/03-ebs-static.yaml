@@ -42,3 +42,16 @@ spec:
     - name: mypd
       persistentVolumeClaim:
         claimName: ebs-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+spec:
+  type: LoadBalancer
+  selector:
+    name: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
