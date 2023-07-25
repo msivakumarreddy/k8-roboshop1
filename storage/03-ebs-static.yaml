@@ -9,7 +9,7 @@ spec:
     storage: 20Gi
   accessModes:
     - ReadWriteOnce
-  #storageClassName: ""
+  persistentVolumeReclaimPolicy: Delete
   awsElasticBlockStore:
       volumeID: "vol-0517b1437e1a99a8a"
       fsType: ext4
